@@ -10,16 +10,6 @@ class ActivitesScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CircleAvatar(
-                backgroundImage: NetworkImage(
-                    'https://cdn.pixabay.com/photo/2020/05/24/05/36/woman-5212479_640.png'),
-              ),
-              IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
-            ],
-          ),
           Container(
             decoration: BoxDecoration(
               border: Border.all(

@@ -47,8 +47,6 @@ class _MainScreenState extends State<MainScreen> {
               icon: Icon(IconlyLight.profile), label: 'Profile'),
         ],
         onTap: _onItemTapped,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.black38,
       ),
     );
   }

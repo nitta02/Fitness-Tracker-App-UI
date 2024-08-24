@@ -1,3 +1,4 @@
+import 'package:fitness_tracker_ui/core/theme/colors.dart';
 import 'package:fitness_tracker_ui/screens/mainScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,29 @@ class FitnessApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainScreen(),
+      theme: ThemeData(
+        //  primary background color
+        scaffoldBackgroundColor: lightGray, // Or any other color
+        //  primary and accent colors
+        primaryColor: softBlue,
+        hintColor: coolGreen,
+        //  text color for better contrast
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(color: Colors.black),
+          bodyMedium: TextStyle(color: Colors.black),
+        ),
+        // Customize other UI elements
+        appBarTheme: const AppBarTheme(
+          backgroundColor: softBlue,
+          titleTextStyle: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: darkGray,
+          selectedItemColor: warmPeach,
+          unselectedItemColor: Colors.grey,
+        ),
+      ),
+      home: const MainScreen(),
     );
   }
 }
