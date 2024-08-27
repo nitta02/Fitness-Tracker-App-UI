@@ -1,4 +1,5 @@
 import 'package:fitness_tracker_ui/core/theme/colors.dart';
+import 'package:fitness_tracker_ui/core/utils/itemsData.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -8,15 +9,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Map<String, double> weekPercentages = {
-      'Fri': 0.7,
-      'Sat': 0.8,
-      'Sun': 0.5,
-      'Mon': 0.6,
-      'Tues': 0.9,
-      'Wed': 0.4,
-      'Thus': 0.3,
-    };
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -90,7 +82,7 @@ class HomeScreen extends StatelessWidget {
                             itemBuilder: (context, index) {
                               String day =
                                   weekPercentages.keys.elementAt(index);
-                              double percent = weekPercentages[day]!;
+                              double percent = weekPercentages[day]!['percent'];
                               return Padding(
                                 padding: const EdgeInsets.all(4.0),
                                 child: Column(
@@ -123,7 +115,7 @@ class HomeScreen extends StatelessWidget {
   }
 
   Container _dailyGoalSection(
-      BuildContext context, Map<String, double> weekPercentages) {
+      BuildContext context, Map<String, Map<String, dynamic>> weekPercentages) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.2,
       decoration: BoxDecoration(
@@ -174,7 +166,7 @@ class HomeScreen extends StatelessWidget {
                     itemCount: weekPercentages.length,
                     itemBuilder: (context, index) {
                       String day = weekPercentages.keys.elementAt(index);
-                      double percent = weekPercentages[day]!;
+                      double percent = weekPercentages[day]!['percent'];
                       return Padding(
                         padding: const EdgeInsets.all(4.0),
                         child: Column(
