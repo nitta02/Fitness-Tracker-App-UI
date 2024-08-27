@@ -24,89 +24,17 @@ class HomeScreen extends StatelessWidget {
                   backgroundImage: NetworkImage(
                       'https://cdn.pixabay.com/photo/2020/05/24/05/36/woman-5212479_640.png'),
                 ),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(IconlyLight.notification)),
               ],
+            ),
+            const SizedBox(
+              height: 20,
             ),
             _dailyGoalSection(context, weekPercentages),
             const SizedBox(
               height: 20,
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.2,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Colors.white,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 15,
-                  vertical: 15,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Start a new Activity',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              'Set a Goal & Track',
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w300,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Icon(IconlyLight.arrow_right_2),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Expanded(
-                      child: SizedBox(
-                          height: 50,
-                          child: ListView.builder(
-                            shrinkWrap: true,
-                            scrollDirection: Axis.horizontal,
-                            itemCount: weekPercentages.length,
-                            itemBuilder: (context, index) {
-                              String day =
-                                  weekPercentages.keys.elementAt(index);
-                              double percent = weekPercentages[day]!['percent'];
-                              return Padding(
-                                padding: const EdgeInsets.all(4.0),
-                                child: Column(
-                                  children: [
-                                    CircularPercentIndicator(
-                                      radius: 20,
-                                      percent: percent,
-                                      progressColor: warmPeach,
-                                    ),
-                                    Text(
-                                      day,
-                                      style: const TextStyle(
-                                        fontSize: 10,
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              );
-                            },
-                          )),
-                    )
-                  ],
-                ),
-              ),
             ),
           ],
         ),
