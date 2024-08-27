@@ -32,7 +32,26 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screens[_selectedindex],
+      body: Stack(
+        children: [
+          screens[_selectedindex],
+          Padding(
+            padding: const EdgeInsets.all(12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://cdn.pixabay.com/photo/2020/05/24/05/36/woman-5212479_640.png'),
+                ),
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(IconlyLight.notification)),
+              ],
+            ),
+          )
+        ],
+      ),
       bottomNavigationBar: Container(
         margin: const EdgeInsets.symmetric(
           horizontal: 15,
