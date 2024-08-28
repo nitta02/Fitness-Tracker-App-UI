@@ -5,6 +5,22 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Padding(
+        padding: EdgeInsets.only(
+          top: 50,
+          left: 15,
+          right: 15,
+        ),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            CircleAvatar()
+          ],
+        ),
+      ),
+    );
   }
 }

@@ -36,7 +36,7 @@ class _MainScreenState extends State<MainScreen> {
         children: [
           screens[_selectedindex],
           Padding(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -44,9 +44,17 @@ class _MainScreenState extends State<MainScreen> {
                   backgroundImage: NetworkImage(
                       'https://cdn.pixabay.com/photo/2020/05/24/05/36/woman-5212479_640.png'),
                 ),
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(IconlyLight.notification)),
+                Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: const Icon(
+                    IconlyLight.notification,
+                  ),
+                ),
               ],
             ),
           )

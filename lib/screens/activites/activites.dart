@@ -18,6 +18,8 @@ class ActivitesScreen extends StatelessWidget {
       60.5,
       10.0,
     ];
+    List<String> section = ['Week', 'Month', 'Year', 'All Time'];
+    String selectedSection = 'Week';
 
     return Scaffold(
       body: Padding(
@@ -27,35 +29,77 @@ class ActivitesScreen extends StatelessWidget {
           right: 15,
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 5),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.grey[200],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: section
+                    .map(
+                      (item) => GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 8, horizontal: 20),
+                          decoration: BoxDecoration(
+                            color: selectedSection == item
+                                ? Colors.white
+                                : Colors.transparent,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Text(
+                            item,
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: selectedSection == item
+                                  ? FontWeight.bold
+                                  : FontWeight.normal,
+                              color: selectedSection == item
+                                  ? Colors.black
+                                  : Colors.black26,
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                    .toList(),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Activities',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: 180,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: BarGraphWidget(
+                summary: data,
+              ),
+            ),
             const SizedBox(
               height: 20,
             ),
             _activitySection(context),
-            // Container(
-            //   decoration: BoxDecoration(
-            //     border: Border.all(
-            //       width: 1,
-            //     ),
-            //     borderRadius: BorderRadius.circular(2),
-            //   ),
-            //   child: Sparkline(
-            //     data: data,
-            //     pointsMode: PointsMode.all,
-            //     pointColor: Colors.black,
-            //     fillColor: Colors.lightBlueAccent,
-            //     fillMode: FillMode.below,
-            //   ),
-            // ),
-            SizedBox(
-              height: 20,
-            ),
-            SizedBox(
-              height: 200,
-              child: BarGraphWidget(
-                summary: data,
-              ),
-            )
           ],
         ),
       ),

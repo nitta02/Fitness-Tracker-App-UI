@@ -27,6 +27,9 @@ class BarGraphWidget extends StatelessWidget {
       BarChartData(
         maxY: 100,
         minY: 0,
+        borderData: FlBorderData(
+          show: false,
+        ),
         titlesData: const FlTitlesData(
           show: true,
           leftTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
@@ -53,7 +56,7 @@ class BarGraphWidget extends StatelessWidget {
                     toY: entry.value.y,
                     width: 35,
                     color: Colors.blue,
-                    borderRadius: BorderRadius.circular(1),
+                    borderRadius: BorderRadius.circular(4),
                   ),
                 ],
               ),

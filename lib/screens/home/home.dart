@@ -1,5 +1,6 @@
 import 'package:fitness_tracker_ui/core/theme/colors.dart';
 import 'package:fitness_tracker_ui/core/utils/itemsData.dart';
+import 'package:fitness_tracker_ui/core/widgets/caloreWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -10,173 +11,77 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(
-          top: 50.0,
-          left: 15,
-          right: 15,
-        ),
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 20,
-            ),
-            _dailyGoalSection(context, weekPercentages),
-            const SizedBox(
-              height: 20,
-            ),
-            Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: 180,
-                      width: 150,
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Colors.blueAccent,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text('Protin'),
-                              Container(
-                                height: 40,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: const Icon(
-                                  IconlyBold.activity,
-                                ),
-                              )
-                            ],
-                          ),
-                          const Text('120.2 Cal'),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 180,
-                      width: 150,
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Colors.lightGreenAccent,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text('Protin'),
-                              Container(
-                                height: 40,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: const Icon(
-                                  IconlyBold.activity,
-                                ),
-                              )
-                            ],
-                          ),
-                          const Text('120.2 Cal'),
-                        ],
-                      ),
-                    )
-                  ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(
+            top: 50.0,
+            left: 15,
+            right: 15,
+          ),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: 150,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: 180,
-                      width: 150,
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Colors.grey,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text('Protin'),
-                              Container(
-                                height: 40,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: const Icon(
-                                  IconlyBold.activity,
-                                ),
-                              )
-                            ],
-                          ),
-                          const Text('120.2 Cal'),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 180,
-                      width: 150,
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Colors.yellowAccent,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text('Protin'),
-                              Container(
-                                height: 40,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: const Icon(
-                                  IconlyBold.activity,
-                                ),
-                              )
-                            ],
-                          ),
-                          const Text('120.2 Cal'),
-                        ],
-                      ),
-                    )
-                  ],
-                )
-              ],
-            )
-          ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              _dailyGoalSection(context, weekPercentages),
+              const SizedBox(
+                height: 20,
+              ),
+              _caloreSection(),
+            ],
+          ),
         ),
       ),
+    );
+  }
+
+  Column _caloreSection() {
+    return const Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Calorewidget(
+              texxt: 'Protin',
+              calText: '120 Cal',
+              icondata: IconlyLight.filter,
+            ),
+            Calorewidget(
+              texxt: 'Calories',
+              calText: '20 g',
+              icondata: IconlyBold.activity,
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Calorewidget(
+              texxt: 'Fat',
+              calText: '320 g',
+              icondata: IconlyLight.work,
+            ),
+            Calorewidget(
+              texxt: 'Carbs',
+              calText: '70 g',
+              icondata: IconlyLight.activity,
+            ),
+          ],
+        )
+      ],
     );
   }
 
