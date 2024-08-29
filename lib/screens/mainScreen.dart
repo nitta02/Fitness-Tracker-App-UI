@@ -1,5 +1,5 @@
 import 'package:fitness_tracker_ui/screens/activites/activites.dart';
-import 'package:fitness_tracker_ui/screens/document/document.dart';
+import 'package:fitness_tracker_ui/screens/search/search.dart';
 import 'package:fitness_tracker_ui/screens/home/home.dart';
 import 'package:fitness_tracker_ui/screens/profile/profile.dart';
 import 'package:flutter/material.dart';
@@ -88,10 +88,9 @@ class _MainScreenState extends State<MainScreen> {
                       : IconlyBold.activity),
                   label: 'Activity'),
               BottomNavigationBarItem(
-                  icon: Icon(selectedIcon
-                      ? IconlyLight.document
-                      : IconlyBold.document),
-                  label: 'Advice'),
+                  icon: Icon(
+                      selectedIcon ? IconlyLight.search : IconlyBold.search),
+                  label: 'Search'),
               BottomNavigationBarItem(
                   icon: Icon(
                       selectedIcon ? IconlyLight.profile : IconlyBold.profile),

@@ -12,24 +12,43 @@ Map<String, Map<String, dynamic>> weekPercentages = {
 
 Map<String, Map<String, dynamic>> weekActivity = {
   'Run': {
-    'activity': 'lib/assets/images/walk.png',
+    'activity': 'lib/assets/icons/w.png',
   },
   'Swim': {
-    'activity': 'lib/assets/images/walk.png',
+    'activity': 'lib/assets/icons/s.png',
   },
   'Walk': {
-    'activity': 'lib/assets/images/walk.png',
+    'activity': 'lib/assets/icons/w.png',
   },
   'Play': {
-    'activity': 'lib/assets/images/walk.png',
+    'activity': 'lib/assets/icons/f.png',
   },
   'Yoga': {
-    'activity': 'lib/assets/images/yoga.png',
+    'activity': 'lib/assets/icons/y.png',
   },
-  'Jump': {
-    'activity': 'lib/assets/images/walk.png',
+  'Cardio': {
+    'activity': 'lib/assets/icons/ca.png',
   },
   'Cycle': {
-    'activity': 'lib/assets/images/cycle.png',
+    'activity': 'lib/assets/icons/c.png',
   },
+};
+
+Map<String, Map<String, dynamic>> searchCategory = {
+  'UpperBody': {
+    "week": "7 weeks",
+    "image": 'https://food.unl.edu/Fitness/physical-activity-adults.png',
+  },
+  'LowerBody': {
+    "week": "4 weeks",
+    "image": 'https://food.unl.edu/Fitness/physical-activity-adults.png',
+  },
+  'Swimming': {
+    "week": "10 weeks",
+    "image": 'https://food.unl.edu/Fitness/physical-activity-adults.png',
+  },
+  'Running': {
+    "week": "3 weeks",
+    "image": 'https://food.unl.edu/Fitness/physical-activity-adults.png',
+  }
 };

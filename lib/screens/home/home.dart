@@ -23,17 +23,47 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
+              _dailyGoalSection(context, weekPercentages),
+              const SizedBox(
+                height: 20,
+              ),
               Container(
-                height: 150,
+                height: 100,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 15,
+                  vertical: 15,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                 ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          'Last workout',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'Swimming',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w200,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Icon(IconlyLight.arrow_right_2),
+                  ],
+                ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              _dailyGoalSection(context, weekPercentages),
               const SizedBox(
                 height: 20,
               ),
@@ -88,7 +118,7 @@ class HomeScreen extends StatelessWidget {
   Container _dailyGoalSection(
       BuildContext context, Map<String, Map<String, dynamic>> weekPercentages) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.2,
+      height: MediaQuery.of(context).size.height * 0.21,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: Colors.white,
@@ -110,6 +140,7 @@ class HomeScreen extends StatelessWidget {
                     Text(
                       'Your Daily Goal',
                       style: TextStyle(
+                        fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
