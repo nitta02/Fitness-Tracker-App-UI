@@ -45,14 +45,14 @@ class HomeScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
-                          'Last workout',
+                          'Last workout: Swimming',
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         Text(
-                          'Swimming',
+                          'Duration: 1.5 hours',
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w200,

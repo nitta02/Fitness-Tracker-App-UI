@@ -15,7 +15,7 @@ class SearchContainer extends StatelessWidget {
     return Container(
       height: 150,
       alignment: Alignment.bottomRight,
-      margin: const EdgeInsets.all(15),
+      margin: const EdgeInsets.symmetric(vertical: 15),
       padding: const EdgeInsets.only(
         right: 15,
         left: 15,
