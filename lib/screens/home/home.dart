@@ -44,13 +44,20 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text(
-                          'Last workout: Swimming',
+                        Text.rich(TextSpan(
+                          text: 'Last Workout: ',
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
-                        ),
+                          children: [
+                            TextSpan(
+                                text: 'Swimming',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w800,
+                                ))
+                          ],
+                        )),
                         Text(
                           'Duration: 1.5 hours',
                           style: TextStyle(

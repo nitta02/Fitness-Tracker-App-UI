@@ -34,6 +34,7 @@ class FitnessApp extends StatelessWidget {
           selectedItemColor: warmPeach,
           unselectedItemColor: Colors.grey,
         ),
+        fontFamily: 'Poppins',
       ),
       home: const MainScreen(),
     );

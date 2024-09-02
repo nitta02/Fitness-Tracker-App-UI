@@ -20,12 +20,10 @@ class _MainScreenState extends State<MainScreen> {
     const ProfileScreen(),
   ];
   int _selectedindex = 0;
-  bool selectedIcon = true;
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedindex = index;
-      selectedIcon = false;
     });
   }
 
@@ -80,20 +78,23 @@ class _MainScreenState extends State<MainScreen> {
             currentIndex: _selectedindex,
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                  icon: Icon(selectedIcon ? IconlyLight.home : IconlyBold.home),
+                  icon: Icon(
+                      _selectedindex == 0 ? IconlyBold.home : IconlyLight.home),
                   label: 'Home'),
               BottomNavigationBarItem(
-                  icon: Icon(selectedIcon
-                      ? IconlyLight.activity
-                      : IconlyBold.activity),
+                  icon: Icon(_selectedindex == 1
+                      ? IconlyBold.activity
+                      : IconlyLight.activity),
                   label: 'Activity'),
               BottomNavigationBarItem(
-                  icon: Icon(
-                      selectedIcon ? IconlyLight.search : IconlyBold.search),
+                  icon: Icon(_selectedindex == 2
+                      ? IconlyBold.search
+                      : IconlyLight.search),
                   label: 'Search'),
               BottomNavigationBarItem(
-                  icon: Icon(
-                      selectedIcon ? IconlyLight.profile : IconlyBold.profile),
+                  icon: Icon(_selectedindex == 3
+                      ? IconlyBold.profile
+                      : IconlyLight.profile),
                   label: 'Profile'),
             ],
             onTap: _onItemTapped,
