@@ -1,3 +1,4 @@
+import 'package:fitness_tracker_ui/core/theme/colors.dart';
 import 'package:fitness_tracker_ui/presentation/screens/activites/activites.dart';
 import 'package:fitness_tracker_ui/presentation/screens/search/search.dart';
 import 'package:fitness_tracker_ui/presentation/screens/home/home.dart';
@@ -16,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
   static List<Widget> screens = [
     const HomeScreen(),
     const ActivitesScreen(),
-    const DocumentScreen(),
+    const SearchScreen(),
     const ProfileScreen(),
   ];
   int _selectedindex = 0;
@@ -40,7 +41,7 @@ class _MainScreenState extends State<MainScreen> {
               children: [
                 const CircleAvatar(
                   backgroundImage: NetworkImage(
-                      'https://cdn.pixabay.com/photo/2020/05/24/05/36/woman-5212479_640.png'),
+                      "https://pics.craiyon.com/2023-10-22/95bbbe67fe014f92847d28f43bd24c5b.webp"),
                 ),
                 Container(
                   height: 40,
@@ -59,7 +60,7 @@ class _MainScreenState extends State<MainScreen> {
         ],
       ),
       bottomNavigationBar: Container(
-        margin: const EdgeInsets.symmetric(
+        margin: EdgeInsets.symmetric(
           horizontal: 15,
           vertical: 15,
         ),
@@ -75,7 +76,10 @@ class _MainScreenState extends State<MainScreen> {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(15),
           child: BottomNavigationBar(
+            backgroundColor: backgroundColor,
             currentIndex: _selectedindex,
+            selectedItemColor: primaryColor,
+            unselectedItemColor: titleColor,
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                   icon: Icon(

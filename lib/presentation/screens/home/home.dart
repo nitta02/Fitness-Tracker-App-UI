@@ -11,6 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor, // Set background color
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(
@@ -20,17 +21,11 @@ class HomeScreen extends StatelessWidget {
           ),
           child: Column(
             children: [
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               _dailyGoalSection(context, weekPercentages),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               lastWorkoutSection(),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               _caloreSection(),
             ],
           ),
@@ -49,51 +44,67 @@ class HomeScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 5),
+          ),
+        ],
       ),
-      child: const Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text.rich(TextSpan(
-                text: 'Last Workout: ',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                ),
-                children: [
-                  TextSpan(
+              Text.rich(
+                TextSpan(
+                  text: 'Last Workout: ',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: titleColor, // Use title color
+                  ),
+                  children: [
+                    TextSpan(
                       text: 'Swimming',
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
-                      ))
-                ],
-              )),
+                        color: primaryColor, // Use primary color
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Text(
                 'Duration: 1.5 hours',
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w200,
+                  color: titleColor.withOpacity(0.6), // Lightened title color
                 ),
               ),
             ],
           ),
-          Icon(IconlyLight.arrow_right_2),
+          Icon(
+            IconlyLight.arrow_right_2,
+            color: primaryColor, // Use primary color for the icon
+          ),
         ],
       ),
     );
   }
 
   Column _caloreSection() {
-    return Column(
+    return const Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Calorewidget(
-              texxt: 'Protin',
+              texxt: 'Protein',
               calText: '120 Cal',
               image: 'lib/assets/icons/protin.png',
             ),
@@ -104,9 +115,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(
-          height: 15,
-        ),
+        SizedBox(height: 15),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -121,18 +130,27 @@ class HomeScreen extends StatelessWidget {
               image: 'lib/assets/icons/carbs.png',
             ),
           ],
-        )
+        ),
       ],
     );
   }
 
   Container _dailyGoalSection(
-      BuildContext context, Map<String, Map<String, dynamic>> weekPercentages) {
+    BuildContext context,
+    Map<String, Map<String, dynamic>> weekPercentages,
+  ) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.21,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 5),
+          ),
+        ],
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -142,7 +160,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
@@ -153,6 +171,7 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
+                        color: titleColor, // Use title color
                       ),
                     ),
                     Text(
@@ -160,48 +179,54 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w300,
+                        color:
+                            titleColor.withOpacity(0.6), // Lighter title color
                       ),
                     ),
                   ],
                 ),
-                Icon(IconlyLight.arrow_right_2),
+                Icon(
+                  IconlyLight.arrow_right_2,
+                  color: primaryColor, // Primary color for the icon
+                ),
               ],
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             Expanded(
               child: SizedBox(
-                  height: 50,
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: weekPercentages.length,
-                    itemBuilder: (context, index) {
-                      String day = weekPercentages.keys.elementAt(index);
-                      double percent = weekPercentages[day]!['percent'];
-                      return Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Column(
-                          children: [
-                            CircularPercentIndicator(
-                              radius: 20,
-                              lineWidth: 7,
-                              percent: percent,
-                              progressColor: warmPeach,
+                height: 50,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: weekPercentages.length,
+                  itemBuilder: (context, index) {
+                    String day = weekPercentages.keys.elementAt(index);
+                    double percent = weekPercentages[day]!['percent'];
+                    return Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Column(
+                        children: [
+                          CircularPercentIndicator(
+                            radius: 20,
+                            lineWidth: 7,
+                            percent: percent,
+                            progressColor:
+                                secondaryColor, // Use secondary color
+                          ),
+                          Text(
+                            day,
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: titleColor, // Title color for day text
                             ),
-                            Text(
-                              day,
-                              style: const TextStyle(
-                                fontSize: 10,
-                              ),
-                            )
-                          ],
-                        ),
-                      );
-                    },
-                  )),
-            )
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
           ],
         ),
       ),

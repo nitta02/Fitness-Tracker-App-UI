@@ -15,7 +15,7 @@ class FitnessApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         //  primary background color
-        scaffoldBackgroundColor: lightGray, // Or any other color
+        scaffoldBackgroundColor: backgroundColor, // Or any other color
         //  primary and accent colors
         primaryColor: softBlue,
         hintColor: coolGreen,

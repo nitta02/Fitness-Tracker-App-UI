@@ -1,3 +1,4 @@
+import 'package:fitness_tracker_ui/core/theme/colors.dart';
 import 'package:fitness_tracker_ui/core/utils/barData/barData.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +56,7 @@ class BarGraphWidget extends StatelessWidget {
                   BarChartRodData(
                     toY: entry.value.y,
                     width: 35,
-                    color: Colors.blue,
+                    color: primaryColor,
                     borderRadius: BorderRadius.circular(4),
                   ),
                 ],
