@@ -1,5 +1,5 @@
 import 'package:fitness_tracker_ui/core/theme/colors.dart';
-import 'package:fitness_tracker_ui/screens/mainScreen.dart';
+import 'package:fitness_tracker_ui/presentation/mainScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

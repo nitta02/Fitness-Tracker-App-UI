@@ -1,15 +1,18 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
 
 class Calorewidget extends StatelessWidget {
   final String texxt;
   final String calText;
-  final IconData icondata;
-  const Calorewidget(
+  IconData? icondata;
+  final String image;
+  Calorewidget(
       {super.key,
       required this.texxt,
       required this.calText,
-      required this.icondata});
+      this.icondata,
+      required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +39,11 @@ class Calorewidget extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Icon(
-                  icondata,
-                ),
+                child: Image.asset(image),
               ),
               Text(
                 texxt,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                 ),
@@ -51,7 +52,7 @@ class Calorewidget extends StatelessWidget {
           ),
           Text(
             '$calText',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),

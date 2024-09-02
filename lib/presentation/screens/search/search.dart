@@ -1,5 +1,5 @@
 import 'package:fitness_tracker_ui/core/utils/itemsData.dart';
-import 'package:fitness_tracker_ui/core/widgets/searchContainer.dart';
+import 'package:fitness_tracker_ui/presentation/widgets/searchContainer.dart';
 import 'package:flutter/material.dart';
 
 class DocumentScreen extends StatelessWidget {

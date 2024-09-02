@@ -1,5 +1,5 @@
 import 'package:fitness_tracker_ui/core/utils/itemsData.dart';
-import 'package:fitness_tracker_ui/core/widgets/barGraph.dart';
+import 'package:fitness_tracker_ui/presentation/widgets/barGraph.dart';
 import 'package:flutter/material.dart';
 
 import 'package:iconly/iconly.dart';

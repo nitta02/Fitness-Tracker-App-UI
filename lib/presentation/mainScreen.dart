@@ -1,7 +1,7 @@
-import 'package:fitness_tracker_ui/screens/activites/activites.dart';
-import 'package:fitness_tracker_ui/screens/search/search.dart';
-import 'package:fitness_tracker_ui/screens/home/home.dart';
-import 'package:fitness_tracker_ui/screens/profile/profile.dart';
+import 'package:fitness_tracker_ui/presentation/screens/activites/activites.dart';
+import 'package:fitness_tracker_ui/presentation/screens/search/search.dart';
+import 'package:fitness_tracker_ui/presentation/screens/home/home.dart';
+import 'package:fitness_tracker_ui/presentation/screens/profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 

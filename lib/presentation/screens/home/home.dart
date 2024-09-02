@@ -1,6 +1,6 @@
 import 'package:fitness_tracker_ui/core/theme/colors.dart';
 import 'package:fitness_tracker_ui/core/utils/itemsData.dart';
-import 'package:fitness_tracker_ui/core/widgets/caloreWidget.dart';
+import 'package:fitness_tracker_ui/presentation/widgets/caloreWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -27,50 +27,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Container(
-                height: 100,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 15,
-                  vertical: 15,
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text.rich(TextSpan(
-                          text: 'Last Workout: ',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          children: [
-                            TextSpan(
-                                text: 'Swimming',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w800,
-                                ))
-                          ],
-                        )),
-                        Text(
-                          'Duration: 1.5 hours',
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w200,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Icon(IconlyLight.arrow_right_2),
-                  ],
-                ),
-              ),
+              lastWorkoutSection(),
               const SizedBox(
                 height: 20,
               ),
@@ -82,8 +39,55 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  Container lastWorkoutSection() {
+    return Container(
+      height: 100,
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15,
+        vertical: 15,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: const Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text.rich(TextSpan(
+                text: 'Last Workout: ',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+                children: [
+                  TextSpan(
+                      text: 'Swimming',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w800,
+                      ))
+                ],
+              )),
+              Text(
+                'Duration: 1.5 hours',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w200,
+                ),
+              ),
+            ],
+          ),
+          Icon(IconlyLight.arrow_right_2),
+        ],
+      ),
+    );
+  }
+
   Column _caloreSection() {
-    return const Column(
+    return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -91,16 +95,16 @@ class HomeScreen extends StatelessWidget {
             Calorewidget(
               texxt: 'Protin',
               calText: '120 Cal',
-              icondata: IconlyLight.filter,
+              image: 'lib/assets/icons/protin.png',
             ),
             Calorewidget(
               texxt: 'Calories',
               calText: '20 g',
-              icondata: IconlyBold.activity,
+              image: 'lib/assets/icons/cal.png',
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         Row(
@@ -109,12 +113,12 @@ class HomeScreen extends StatelessWidget {
             Calorewidget(
               texxt: 'Fat',
               calText: '320 g',
-              icondata: IconlyLight.work,
+              image: 'lib/assets/icons/fats.png',
             ),
             Calorewidget(
               texxt: 'Carbs',
               calText: '70 g',
-              icondata: IconlyLight.activity,
+              image: 'lib/assets/icons/carbs.png',
             ),
           ],
         )
