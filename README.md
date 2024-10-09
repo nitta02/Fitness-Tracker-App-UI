@@ -1,16 +1,17 @@
-# fitness_tracker_ui
+# Fitness Tracker App UI
 
-A new Flutter project.
+A simple fitness tracker UI built using Flutter. The app's structure follows a clean architecture with separate folders for core logic, presentation, widgets, and screens.
 
-## Getting Started
+## Preview
+![Preview](assets/images/fitness.png)
 
-This project is a starting point for a Flutter application.
+## Folder Structure
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+lib/
+├── core/              # Core logic and utility functions
+├── presentation/      # State management and business logic
+├── widgets/           # Reusable UI components
+├── screens/           # Main screens of the app
+└── main.dart          # App entry point
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
