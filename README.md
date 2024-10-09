@@ -3,7 +3,7 @@
 A simple fitness tracker UI built using Flutter. The app's structure follows a clean architecture with separate folders for core logic, presentation, widgets, and screens.
 
 ## Preview
-![Preview](assets/images/fitness.png)
+![Preview](lib/assets/images/fitness.png)
 
 ## Folder Structure
 
